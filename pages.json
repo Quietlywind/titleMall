@@ -5,10 +5,66 @@
 			"style": {
 				"navigationBarTitleText": "我的小商城"
 			}
+		},
+		{
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "我的小商城"
+			}
+		},
+		{
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "我的小商城"
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "我的小商城"
+			}
+		},
+		{
+			"path": "pages/agreement/agreement",
+			"style": {
+				"navigationBarTitleText": "我的小商城"
+			}
+		},
+		{
+			"path": "pages/grabtickets/grabtickets",
+			"style": {
+				"navigationBarTitleText": "我的小商城"
+			}
+		},
+		{
+			"path": "pages/writeoff/writeoff",
+			"style": {
+				"navigationBarTitleText": "我的小商城"
+			}
 		}
 	],
 	"tabBar":{
-		
+		"color": "#C0C4CC",
+		"selectedColor": "#1cbbb4",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath":"pages/index/index",
+			"iconPath":"static/images/tabber/tab-home.png",
+			"selectedIconPath":"static/images/tabber/tab-home-select.png",
+			"text":"首页"
+		},{
+			"pagePath":"pages/search/search",
+			"iconPath":"static/images/tabber/tab-search.png",
+			"selectedIconPath":"static/images/tabber/tab-search-select.png",
+			"text":"搜索"
+		},
+		{
+			"pagePath":"pages/user/user",
+			"iconPath":"static/images/tabber/tab-user.png",
+			"selectedIconPath":"static/images/tabber/tab-user-select.png",
+			"text":"我的"
+		}]
 	},
 	"globalStyle": {
 		"navigationStyle": "custom", //配置取消系统导航栏

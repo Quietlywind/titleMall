@@ -1,0 +1,1 @@
+<view><cu-custom vue-id="1" bgColor="bg-gradual-blue" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content">我的小商城</view></cu-custom><view class="content"><image class="logo" src="/static/logo.png"></image><view class="text-area"><text class="title">{{title}}</text></view></view></view>
