@@ -16,11 +16,30 @@
 					授权登录
 				</button>
 			</view>
-			<view class="header" v-else>
-				{{nickName}}
-				<image :src="avatarUrl" mode=""></image>
+			<view class="user" v-else>
+				<view class="user-section bg-cyan" >
+					<view class="user-info-box">
+						<view class="portrait-box">
+							<image class="portrait" :src="avatarUrl || '../../static/images/user/weixin-default.png'"></image>
+						</view>
+						<view class="info-box">
+							<text class="username">{{nickName || '游客'}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="coupon-manage">
+					<view class="coupon-manage-text">
+						<text>劵管理</text>
+					</view>
+					<view class="coupon-manage-section">
+						<text>全部</text>
+						<uni-icon type="arrowright" size="26"></uni-icon>
+					</view>
+				</view>
 			</view>
+			
 		<!-- #endif -->
+		
 	</view>
 </template>
 
@@ -30,15 +49,14 @@
 			return {
 				nickName: '',
 				avatarUrl: '',
-				isCanUse: uni.getStorage('isCanUse')//默认为true
+				isCanUse: false //默认为false
 			}
 		},
 		onLoad() {
 			// this.login();
-			console.log(uni.getStorage('isCanUse'));
 		},
 		onShow() {
-			
+			this.isCanUse = uni.getStorageSync('isCanUse');
 		},
 		components: {
 
@@ -52,9 +70,11 @@
 				const { detail } = info;
 				this.nickName = detail.userInfo.nickName;
 				this.avatarUrl = detail.userInfo.avatarUrl;
-				uni.setStorage('isCanUse', true);//记录是否第一次授权  false:表示不是第一次授权
-				console.log(uni.getStorage('isCanUse'));
-				console.log(this.isCanUse)
+				try {
+					uni.setStorageSync('isCanUse', true);
+				} catch (e) {}
+				this.isCanUse = uni.getStorageSync('isCanUse')
+				//记录是否第一次授权  false:表示不是第一次授权
 				// uni.getUserInfo({
 				// 	provider: 'weixin',
 				// 	success: function(infoRes) {
@@ -120,7 +140,7 @@
 	}
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
 	.header {
 	    margin: 90rpx 0 90rpx 50rpx;
 	    border-bottom: 1px solid #ccc;
@@ -150,5 +170,30 @@
 	    border-radius: 80rpx;
 	    margin: 70rpx 50rpx;
 	    font-size: 35rpx;
+	}
+	.user-section{
+		height: 300rpx;
+		background-image: url("../../static/images/user/beijing_bolang.png");
+		background-size: cover;
+		background-position: center;
+		/* position: relative; */
+		/* z-index: 1; */
+	}
+	.user-info-box{
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		.portrait{
+			width: 130rpx;
+			height: 130rpx;
+			/* border: 5rpx solid #fff; */
+			border-radius: 50%;
+		}
+		.username{
+			font-size: 32rpx;
+			font-weight: 300;
+		}
 	}
 </style>
