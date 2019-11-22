@@ -1,1 +1,1 @@
-<view class="page data-v-a7544bfa"><cu-custom vue-id="1" bgColor="bg-gradual-blue" class="data-v-a7544bfa" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content" class="data-v-a7544bfa">我的小商城</view></cu-custom></view>
+<view class="page data-v-a7544bfa"><cu-custom vue-id="1" bgColor="bg-gradual-blue" isBack="{{true}}" class="data-v-a7544bfa" bind:__l="__l" vue-slots="{{['backText','content']}}"><view slot="backText" class="data-v-a7544bfa">返回</view><view slot="content" class="data-v-a7544bfa">我的小商城</view></cu-custom></view>

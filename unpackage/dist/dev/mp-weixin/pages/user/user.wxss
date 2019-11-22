@@ -19,11 +19,25 @@
 /* 尺寸变量 */
 /* 文字尺寸 */
 /* 图片尺寸 */
-/* Border Radius */
+/* 边框圆角 */
 /* 水平间距 */
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.coupon-list .coupon-item.data-v-1efbcbc3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .header.data-v-1efbcbc3 {
   margin: 90rpx 0 90rpx 50rpx;
   border-bottom: 1px solid #ccc;
@@ -81,11 +95,129 @@
 .user-info-box .portrait.data-v-1efbcbc3 {
     width: 130rpx;
     height: 130rpx;
-    /* border: 5rpx solid #fff; */
+    overflow: hidden;
+    display: block;
+    border: 4rpx solid #fff;
     border-radius: 50%;
+    display: block;
 }
 .user-info-box .username.data-v-1efbcbc3 {
     font-size: 32rpx;
     font-weight: 300;
+}
+.content-manage.data-v-1efbcbc3 {
+  padding: 0 30rpx;
+  position: relative;
+  /* background: #f5f5f5; */
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.coupon-manage.data-v-1efbcbc3 {
+  background: #fff;
+  border-radius: 10rpx;
+}
+.coupon-manage .coupon-header.data-v-1efbcbc3 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* height: 40px;
+		line-height: 40px; */
+    line-height: 80rpx;
+    padding: 0px 20rpx;
+}
+.coupon-manage .coupon-header .coupon-ticket.data-v-1efbcbc3 {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+}
+.coupon-manage .coupon-header .coupon-text.data-v-1efbcbc3 {
+      font-size: 28rpx;
+}
+.coupon-manage .coupon-header .coupon-section.data-v-1efbcbc3 {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      /* .coupon-right{
+				align-self: center;
+			} */
+}
+.little-solid-bottom-black.data-v-1efbcbc3 {
+  position: relative;
+}
+.little-solid-bottom-black.data-v-1efbcbc3::after {
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    -webkit-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+            transform-origin: 0 0;
+    pointer-events: none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.little-solid-bottom-black.data-v-1efbcbc3::after {
+  border-bottom: 1rpx solid black;
+}
+.coupon-list.data-v-1efbcbc3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 25rpx 35rpx;
+}
+.coupon-list .coupon-item.data-v-1efbcbc3 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 24rpx;
+    color: #000;
+}
+.coupon-list image.data-v-1efbcbc3 {
+    width: 88rpx;
+    height: 88rpx;
+    margin-bottom: 10rpx;
+}
+.contact.data-v-1efbcbc3 {
+  margin-top: 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.content-bottom.data-v-1efbcbc3 {
+  font-size: 32rpx;
+  position: absolute;
+  bottom: calc(0px + 10px);
+  width: 100%;
+  text-align: center;
 }
 

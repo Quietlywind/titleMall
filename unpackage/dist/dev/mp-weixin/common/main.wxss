@@ -19,7 +19,7 @@
 /* 尺寸变量 */
 /* 文字尺寸 */
 /* 图片尺寸 */
-/* Border Radius */
+/* 边框圆角 */
 /* 水平间距 */
 /* 垂直间距 */
 /* 透明度 */
@@ -4788,6 +4788,55 @@ scroll-view.cu-steps .cu-item {
 .cuIcon-btn:before {
 	content: "\E601";
 }
+@font-face {
+  font-family: "qficon";
+  font-weight: normal;
+  font-style: normal;
+  src: url('https://at.alicdn.com/t/font_1512175_dmr629bxylj.ttf') format('truetype');
+}
+.qficon {
+  font-family: "qficon" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.qf-weixin1:before {
+  content: "\E6B3";
+}
+.qf-fangxiang-xiangxia:before {
+  content: "\E614";
+}
+.qf-fangxiang-xiangshang:before {
+  content: "\E615";
+}
+.qf-fangxiang-xiangzuo:before {
+  content: "\E616";
+}
+.qf-fangxiang-xiangyou:before {
+  content: "\E617";
+}
+.qf-search:before {
+  content: "\E665";
+}
+.qf-home:before {
+  content: "\E667";
+}
+.qf-data:before {
+  content: "\E668";
+}
+.qf-arrow_up:before {
+  content: "\E68C";
+}
+.qf-arrow_right:before {
+  content: "\E68D";
+}
+.qf-arrow_left:before {
+  content: "\E6B5";
+}
+.qf-arrow_down:before {
+  content: "\E6B6";
+}
 /*每个页面公共css */
 view,
 scroll-view,
@@ -4815,5 +4864,28 @@ image,
 video {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+.common-hover {
+  background: #f5f5f5;
+}
+/*边框*/
+.b-b:after,
+.b-t:after {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  height: 0;
+  content: '';
+  -webkit-transform: scaleY(0.5);
+      -ms-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  border-bottom: 1px solid #E4E7ED;
+}
+.b-b:after {
+  bottom: 0;
+}
+.b-t:after {
+  top: 0;
 }
 

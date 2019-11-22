@@ -1,6 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "我的小商城"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "我的小商城"
@@ -18,12 +24,7 @@
 				"navigationBarTitleText": "我的小商城"
 			}
 		},
-		{
-			"path": "pages/user/user",
-			"style": {
-				"navigationBarTitleText": "我的小商城"
-			}
-		},
+		
 		{
 			"path": "pages/agreement/agreement",
 			"style": {
@@ -40,6 +41,12 @@
 			"path": "pages/writeoff/writeoff",
 			"style": {
 				"navigationBarTitleText": "我的小商城"
+			}
+		},
+		{
+			"path": "pages/coupon/coupon",
+			"style": {
+				"navigationBarTitleText": "券管理"
 			}
 		}
 	],

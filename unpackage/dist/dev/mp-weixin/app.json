@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/user/user",
     "pages/index/index",
     "pages/detail/detail",
     "pages/search/search",
-    "pages/user/user",
     "pages/agreement/agreement",
     "pages/grabtickets/grabtickets",
-    "pages/writeoff/writeoff"
+    "pages/writeoff/writeoff",
+    "pages/coupon/coupon"
   ],
   "subPackages": [],
   "window": {
@@ -45,5 +46,5 @@
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
-  "sitemapLocation": "sitemap24.json"
+  "sitemapLocation": "sitemap37.json"
 }

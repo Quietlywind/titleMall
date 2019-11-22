@@ -37,6 +37,7 @@
 <style lang="scss">
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
+	@import "common/icons/iconfont.css";
 	/*每个页面公共css */
 	view,
 	scroll-view,
@@ -63,5 +64,30 @@
 	image,
 	video {
 		box-sizing: border-box;
+	}
+	
+	.common-hover {
+		background: #f5f5f5;
+	}
+	
+	/*边框*/
+	.b-b:after,
+	.b-t:after {
+		position: absolute;
+		z-index: 3;
+		left: 0;
+		right: 0;
+		height: 0;
+		content: '';
+		transform: scaleY(.5);
+		border-bottom: 1px solid $border-color-base;
+	}
+	
+	.b-b:after {
+		bottom: 0;
+	}
+	
+	.b-t:after {
+		top: 0;
 	}
 </style>

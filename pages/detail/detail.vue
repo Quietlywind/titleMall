@@ -1,7 +1,7 @@
 <template>
 	<view class="page">
-		<cu-custom bgColor="bg-gradual-blue">
-			<!-- <block slot="backText">返回</block> -->
+		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+			<block slot="backText">返回</block>
 			<block slot="content">我的小商城</block>
 		</cu-custom>
 	</view>
@@ -14,7 +14,8 @@
 				
 			}
 		},
-		onLoad() {
+		onLoad(option) {
+			console.log(option.type)
 			console.log(1)
 		},
 		onShow() {
