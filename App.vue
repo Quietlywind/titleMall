@@ -66,6 +66,19 @@
 		box-sizing: border-box;
 	}
 	
+	.text-ellipsis{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		display: block;
+	}
+	.text-ellipsis-more{
+		display: -webkit-box;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    -webkit-line-clamp: 2; //显示的行数
+	    -webkit-box-orient: vertical;
+	}
 	.common-hover {
 		background: #f5f5f5;
 	}
