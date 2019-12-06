@@ -2,9 +2,14 @@
 	<view>
 		<view class="cu-custom" :style="[{height:CustomBar + 'px'}]">
 			<view class="cu-bar fixed" :style="style" :class="[bgImage!=''?'none-bg text-white bg-img':'',bgColor]">
-				<view class="action" @tap="BackPage" v-if="isBack">
-					<text class="cuIcon-back"></text>
-					<slot name="backText"></slot>
+				<view class="action" v-if="isBack">
+					<!-- <text class="cuIcon-back"></text>
+					<slot name="backText"></slot> -->
+					<view class="action-section" :style="actionStyle">
+						<text class="cuIcon-back" style="font-size: 17px;" @tap="BackPage"></text>
+						<text class="action-line"></text>
+						<text class="cuIcon-homefill" style="font-size: 17px;" @tap="BackHome"></text>
+					</view>
 				</view>
 				<view class="content" :style="[{top:StatusBar + 'px'}]">
 					<slot name="content"></slot>
@@ -34,6 +39,12 @@
 					style = `${style}background-image:url(${bgImage});`;
 				}
 				return style
+			},
+			actionStyle() {
+				let customWidth = this.Custom.width;
+				let customHeight = this.Custom.height;
+				let style = `width:${customWidth}px;height:${customHeight}px;line-height:${customHeight}px;`;
+				return style
 			}
 		},
 		props: {
@@ -48,7 +59,7 @@
 			bgImage: {
 				type: String,
 				default: ''
-			},
+			}
 		},
 		methods: {
 			BackPage() {
@@ -59,11 +70,30 @@
 				uni.navigateBack({
 					delta: 1
 				});
+			},
+			BackHome() {
+				uni.switchTab({
+					url: '../../pages/index/index'
+				})
 			}
 		}
 	}
 </script>
 
 <style>
-
+	.action-section{
+		display: flex;
+		align-items: center;
+		justify-content:center;
+		border: .5px solid rgba(255, 255, 255, .2);
+		border-radius: 20px;
+		background-color: rgba(0, 0, 0, .1);
+	}
+	.action-line{
+		width: 1px;
+		height: 18px;
+		background: rgba(255, 255, 255, .5);
+		margin: 0 20rpx;
+		transform: scaleX(0.5);
+	}
 </style>

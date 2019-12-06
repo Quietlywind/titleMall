@@ -104,7 +104,7 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/mix-list-cell":1,"components/modal/modal":1,"components/empty":1,"components/uni-load-more/uni-load-more":1};
+/******/ 		var cssChunks = {"colorui/components/cu-custom":1,"components/mix-list-cell":1,"components/modal/modal":1,"components/empty":1,"components/uni-load-more/uni-load-more":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {

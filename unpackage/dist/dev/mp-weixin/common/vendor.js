@@ -8415,7 +8415,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/user/user": { "navigationBarTitleText": "我的小商城", "usingComponents": { "list-cell": "/components/mix-list-cell", "qf-modal": "/components/modal/modal" } }, "pages/index/index": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/detail/detail": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/search/search": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/agreement/agreement": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/grabtickets/grabtickets": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/writeoff/writeoff": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/coupon/coupon": { "navigationBarTitleText": "券管理", "usingComponents": { "empty": "/components/empty", "uni-load-more": "/components/uni-load-more/uni-load-more" } } }, "globalStyle": { "navigationStyle": "custom", "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的小商城", "usingComponents": { "list-cell": "/components/mix-list-cell", "qf-modal": "/components/modal/modal" } }, "pages/search/search": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/detail/detail": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/agreement/agreement": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/grabtickets/grabtickets": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/writeoff/writeoff": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/coupon/coupon": { "navigationBarTitleText": "券管理", "usingComponents": { "empty": "/components/empty", "uni-load-more": "/components/uni-load-more/uni-load-more" } }, "pages/check/check": { "usingComponents": {} } }, "globalStyle": { "navigationStyle": "custom", "navigationBarTextStyle": "white", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -8546,7 +8546,15 @@ function normalizeComponent (
 /* 18 */,
 /* 19 */,
 /* 20 */,
-/* 21 */
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */
 /*!*************************************************************************!*\
   !*** F:/HBuilderProjects/my-little-mall/common/utils/formValidation.js ***!
   \*************************************************************************/

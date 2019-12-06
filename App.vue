@@ -103,4 +103,22 @@
 	.b-t:after {
 		top: 0;
 	}
+	
+	/* 全边框 */
+	.full-frame{
+		position: relative;
+		&::after{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200%;
+			height: 200%;
+			transform-origin: 0 0;
+			transform: scale(.5);
+			border: 1px solid #999;
+			border-radius: 50px;
+		}
+	}
+	
 </style>
