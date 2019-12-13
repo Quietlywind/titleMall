@@ -90,6 +90,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var m0 = _vm.px(18)
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        m0: m0
+      }
+    }
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -122,7 +131,94 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -179,17 +275,21 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _default =
 {
   data: function data() {
+    var that = this;
     return {
       CustomBar: this.CustomBar,
       pageIndex: 1,
       selectedName1: "全城",
       selectedName2: "默认推荐",
       selectedName3: "小图模式",
+      show: false,
+      dropScreenH: 0, //下拉筛选框距顶部距离
       tabIndex: null, //顶部筛选索引
       selectH: 0,
       attrData: [],
       attrIndex: -1,
       dropScreenShow: false,
+      isBigMode: false, //是否以大图或小图模式展示
       attrArray: [
       { name: "全城", selectName: "全城", isActive: false,
         list: [
@@ -207,19 +307,137 @@ var _default =
         list: [
         { name: "默认推荐", selected: true },
         { name: "附近优先", selected: false },
-        { name: "最新上架", selected: false }] },
+        { name: "最新上架", selected: false },
+        { name: "最新排名", selected: false }] },
 
 
       { name: "小图模式", selectName: "小图模式", isActive: false,
         list: [
         { name: "小图模式", selected: true },
-        { name: "大图模式", selected: false }] }] };
+        { name: "大图模式", selected: false }] }],
 
+
+
+      productList: [
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 1,
+        name: '欧莱雅（LOREAL）奇焕光彩粉嫩透亮修颜霜 30ml（欧莱雅彩妆 BB霜 粉BB 遮瑕疵 隔离）',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 2,
+        name: '德国DMK进口牛奶  欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12盒',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 3,
+        name: '【第2支1元】柔色尽情丝柔口红唇膏女士不易掉色保湿滋润防水 珊瑚红',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 4,
+        name: '百雀羚套装女补水保湿护肤品',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 5,
+        name: '百草味 肉干肉脯 休闲零食 靖江精制猪肉脯200g/袋',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 6,
+        name: '短袖睡衣女夏季薄款休闲家居服短裤套装女可爱韩版清新学生两件套 短袖粉色长颈鹿 M码75-95斤',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 1,
+        name: '欧莱雅（LOREAL）奇焕光彩粉嫩透亮修颜霜 30ml（欧莱雅彩妆 BB霜 粉BB 遮瑕疵 隔离）',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 2,
+        name: '德国DMK进口牛奶  欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12盒',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 3,
+        name: '【第2支1元】柔色尽情丝柔口红唇膏女士不易掉色保湿滋润防水 珊瑚红',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 4,
+        name: '百雀羚套装女补水保湿护肤品',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) }] };
 
 
 
   },
-  onLoad: function onLoad() {
+  onLoad: function onLoad(option) {var _this = this;
+    var obj = {};
+
+    obj = wx.getMenuButtonBoundingClientRect();
+
+
+
+
+
+
+
+    uni.getSystemInfo({
+      success: function success(res) {
+        _this.dropScreenH = _this.CustomBar + 50 + uni.upx2px(168);
+      } });
+
   },
   onShow: function onShow() {
 
@@ -231,9 +449,32 @@ var _default =
 
 
   methods: {
+    /* 转换px */
+    px: function px(num) {
+      return uni.upx2px(num);
+    },
+    /* 生成随机id数 */
+    getRndInteger: function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
     /* 搜索框事件 */
     searchIcon: function searchIcon(e) {
       var key = e.detail.value;
+    },
+
+    /* 判断数据显示个数 */
+    numSwitch: function numSwitch(val) {
+      switch (true) {
+        case val < 3:
+          return 160;
+          break;
+        case val >= 4:
+          return 320;
+          break;
+        default:
+          return 320;
+          break;}
+
     },
 
     /* 筛选下拉打开事件 */
@@ -243,28 +484,35 @@ var _default =
       });
       var index = e.currentTarget.dataset.index;
       var isActive = e.currentTarget.dataset.isactive;
-      // let arr = JSON.parse(JSON.stringify(this.attrArray[index].list));
       this.attrData = this.attrArray[index].list;
       this.attrIndex = index;
-      this.dropScreenShow = !this.dropScreenShow;
-      this.selectH = this.dropScreenShow ? 246 : 0;
+      this.dropScreenShow = true;
+      this.selectH = this.dropScreenShow ? this.numSwitch(this.attrData.length) : 0;
       this.$set(this.attrArray[index], "isActive", !this.attrArray[index].isActive);
+      // this.scrollTop = 1;
+      // this.$nextTick(() => {
+      // 	this.scrollTop = 0
+      // });
       if (isActive) {
         this.$set(this.attrArray[index], "isActive", false);
+        this.selectH = 0;
         this.dropScreenShow = false;
       }
     },
+
     /* 筛选下拉关闭事件 */
     hideDropdownList: function hideDropdownList() {
-      this.dropScreenShow = false;
+      var obj = this.attrArray[this.attrIndex];
+      this.$set(obj, "isActive", false);
       this.attrIndex = -1;
       this.selectH = 0;
+      this.dropScreenShow = false;
     },
     /* 筛选下来子项选择事件 */
     dropdownItem: function dropdownItem(e) {
       var attrindex = this.attrIndex;
       var index = e.currentTarget.dataset.index;
-      var attrName = "";e;
+      var attrName = "";
       for (var i = 0; i < this.attrData.length; i++) {
         if (i == index) {
           this.attrData[i].selected = true;
@@ -274,10 +522,41 @@ var _default =
         }
       }
       var obj = this.attrArray[attrindex];
+      if (obj.selectName == attrName) {
+        return false;
+      }
+      if (attrindex == 2) {
+        switch (attrName) {
+          case '大图模式':
+            this.isBigMode = true;
+            break;
+          case '小图模式':
+            this.isBigMode = false;
+            break;
+          default:
+            break;}
+
+      }
       this.$set(obj, "selectName", attrName);
       this.$set(obj, "isActive", false);
+      this.attrIndex = -1;
       this.selectH = 0;
       this.dropScreenShow = false;
+    },
+
+    /* 顶部筛选下拉展开事件 */
+    iconDropChange: function iconDropChange() {
+      this.show = !this.show;
+    },
+    /* 顶部筛选下拉关闭事件 */
+    handleClose: function handleClose() {
+      this.show = false;
+    },
+    /* 查看产品详情 */
+    checkDetail: function checkDetail() {
+      uni.navigateTo({
+        url: '/pages/detail/detail' });
+
     } },
 
   created: function created() {
@@ -286,6 +565,7 @@ var _default =
   mounted: function mounted() {
 
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
