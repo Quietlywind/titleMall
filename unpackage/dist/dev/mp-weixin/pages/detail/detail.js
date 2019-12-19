@@ -90,21 +90,6 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var m0 = _vm.getRndInteger(150, 300)
-  var m1 = _vm.getRndInteger(200, 500)
-  var m2 = _vm.getRndInteger(500, 2000)
-  var m3 = _vm.getRndInteger(200, 5000)
-  _vm.$mp.data = Object.assign(
-    {},
-    {
-      $root: {
-        m0: m0,
-        m1: m1,
-        m2: m2,
-        m3: m3
-      }
-    }
-  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -234,10 +219,93 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
+    var that = this;
     return {
+      type: 1,
       scrollH: 0, //滚动总高度
       banner: [
       "https://www.thorui.cn/img/product/11.jpg",
@@ -266,11 +334,83 @@ var _default =
       "三、掌柜相信您是位诚信的买家，拍下宝贝后，请各位及时付款，未及时付款的，掌柜会关闭交易，有特殊情况的请与掌柜联系沟通；",
       "四、拍下您需要的产品后请确定您的支付方式及详细的联系方式和发货地址；",
       "五、买家完成付款后,正常情况下我们会在24小时内发货，发货后所有的货单号会及时上传至网上以便你可以随时跟踪货物派送情况；",
-      "六、货品签收：店里所有出售的商品发出前我们都会检查，一般核对两次商品数量和质量，无误后才会打包，破损的商品我们不会发出。但是由于货品的长途运输(快递)，是在本店的控制范围之外，所以请买家朋友在收到快递送货时，要在快递人员面前验货，如不当面验货的，快递将不负责商品的完好，本店无法要求快递索赔；如您的包裹由您的家人、朋友、同事、门卫等人签收，视为您已经签收，签字后再提出异议，恕本店无法解决，请大家注意！请在签收后第一时间上网确认。"] };
+      "六、货品签收：店里所有出售的商品发出前我们都会检查，一般核对两次商品数量和质量，无误后才会打包，破损的商品我们不会发出。但是由于货品的长途运输(快递)，是在本店的控制范围之外，所以请买家朋友在收到快递送货时，要在快递人员面前验货，如不当面验货的，快递将不负责商品的完好，本店无法要求快递索赔；如您的包裹由您的家人、朋友、同事、门卫等人签收，视为您已经签收，签字后再提出异议，恕本店无法解决，请大家注意！请在签收后第一时间上网确认。"],
+
+      //商品描述html
+      descriptionStr: '<div style="text-align:center;"><img width="100%" src="https://ae01.alicdn.com/kf/HTB1t0fUl_Zmx1VjSZFGq6yx2XXa5.jpg"/><img width="100%" src="https://ae01.alicdn.com/kf/HTB1LzkjThTpK1RjSZFKq6y2wXXaT.jpg"/><img width="100%" src="https://ae01.alicdn.com/kf/HTB18dkiTbvpK1RjSZPiq6zmwXXa8.jpg"/></div>',
+      descriptionText: [
+      { title: "商城价", desc: "商城价为商品的销售价，是您最终决定是否购买商品的依据。" },
+      { title: "划线价", desc: "商品展示的划横线价格为参考价，该价格可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在京东平台上曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。" },
+      { title: "折扣", desc: "如无特殊说明，折扣指销售商在原价、或划线价（如品牌专柜标价、商品吊牌价、厂商指导价、厂商建议零售价）等某一价格基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系销售商进行咨询。" },
+      { title: "异常问题", desc: "商品促销信息以商品详情页“促销”栏中的信息为准；商品的具体售价以订单结算页价格为准；如您发现活动商品售价或促销信息有异常，建议购买前先联系销售商咨询。" }],
+
+      productList: [
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 1,
+        name: '欧莱雅（LOREAL）奇焕光彩粉嫩透亮修颜霜 30ml（欧莱雅彩妆 BB霜 粉BB 遮瑕疵 隔离）',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 2,
+        name: '德国DMK进口牛奶  欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12盒',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 3,
+        name: '【第2支1元】柔色尽情丝柔口红唇膏女士不易掉色保湿滋润防水 珊瑚红',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 4,
+        name: '百雀羚套装女补水保湿护肤品',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 5,
+        name: '百草味 肉干肉脯 休闲零食 靖江精制猪肉脯200g/袋',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) },
+
+      {
+        id: that.getRndInteger(1100000000, 1199999999),
+        img: 6,
+        name: '短袖睡衣女夏季薄款休闲家居服短裤套装女可爱韩版清新学生两件套 短袖粉色长颈鹿 M码75-95斤',
+        price: that.getRndInteger(150, 300),
+        sale: that.getRndInteger(0, 1000),
+        factory: that.getRndInteger(200, 500),
+        coverNum: that.getRndInteger(500, 2000),
+        browseNum: that.getRndInteger(500, 5000) }] };
+
+
 
 
   },
   onLoad: function onLoad(option) {var _this = this;
+    this.type = option.id;
     var obj = {};
 
     obj = wx.getMenuButtonBoundingClientRect();
@@ -295,8 +435,15 @@ var _default =
   components: {},
 
 
-  computed: {},
+  computed: {
+    proDetail: function proDetail() {
+      return {
+        price: this.getRndInteger(150, 300),
+        factory: this.getRndInteger(200, 500),
+        coverNum: this.getRndInteger(500, 2000),
+        browseNum: this.getRndInteger(500, 5000) };
 
+    } },
 
   methods: {
     /* 生成随机id数 */
@@ -347,6 +494,18 @@ var _default =
         latitude: latitude,
         longitude: longitude,
         scale: 18 });
+
+    },
+    /* 为您推荐中商品详情跳转 */
+    gotoDetail: function gotoDetail() {
+      uni.navigateTo({
+        url: '/pages/detail/detail' });
+
+    },
+    /* 底部操作栏跳转 */
+    gotoPage: function gotoPage(url) {
+      uni.switchTab({
+        url: url });
 
     } },
 

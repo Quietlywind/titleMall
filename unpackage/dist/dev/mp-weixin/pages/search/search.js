@@ -555,7 +555,7 @@ var _default =
     /* 查看产品详情 */
     checkDetail: function checkDetail() {
       uni.navigateTo({
-        url: '/pages/detail/detail' });
+        url: '/pages/detail/detail?id=' + this.getRndInteger(1, 3) });
 
     } },
 
