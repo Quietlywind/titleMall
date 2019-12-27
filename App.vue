@@ -120,5 +120,23 @@
 			border-radius: 50px;
 		}
 	}
+	/* 深色边框 */
+	// .border-top-dark {
+	// 	position: relative;
+	// 	&::after { 
+	// 		content: " ";
+	// 		position: absolute; 
+	// 		left: 0;
+	// 		bottom: 0; 
+	// 		right: 0; 
+	// 		height: 1px; 
+	// 		background: #333333; 
+	// 		transform-origin: 0 0; 
+	// 		transform: scaleY(.5); 
+	// 	} 
+	// }
+	.qf-line-height {
+		line-height: 1.5;
+	}
 	
 </style>

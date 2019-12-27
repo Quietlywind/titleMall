@@ -2,7 +2,7 @@
 
 /***/ 32:
 /*!*************************************************************************************!*\
-  !*** F:/HBuilderProjects/my-little-mall/main.js?{"page":"pages%2Fsearch%2Fsearch"} ***!
+  !*** G:/HBuilderProjects/my-little-mall/main.js?{"page":"pages%2Fsearch%2Fsearch"} ***!
   \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -19,7 +19,7 @@ createPage(_search.default);
 
 /***/ 33:
 /*!******************************************************************!*\
-  !*** F:/HBuilderProjects/my-little-mall/pages/search/search.vue ***!
+  !*** G:/HBuilderProjects/my-little-mall/pages/search/search.vue ***!
   \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -59,7 +59,7 @@ component.options.__file = "HBuilderProjects/my-little-mall/pages/search/search.
 
 /***/ 34:
 /*!*************************************************************************************************!*\
-  !*** F:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=template&id=184e6a23& ***!
+  !*** G:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=template&id=184e6a23& ***!
   \*************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -77,7 +77,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ 35:
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/webpack-uni-nvue-loader/lib/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!F:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=template&id=184e6a23& ***!
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/webpack-uni-nvue-loader/lib/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!G:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=template&id=184e6a23& ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -109,7 +109,7 @@ render._withStripped = true
 
 /***/ 36:
 /*!*******************************************************************************************!*\
-  !*** F:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=script&lang=js& ***!
+  !*** G:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -125,7 +125,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ 37:
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!F:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!G:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -435,7 +435,8 @@ var _default =
 
     uni.getSystemInfo({
       success: function success(res) {
-        _this.dropScreenH = _this.CustomBar + 50 + uni.upx2px(168);
+        console.log(uni.upx2px(168));
+        _this.dropScreenH = _this.CustomBar + 50 + uni.upx2px(88) + uni.upx2px(80);
       } });
 
   },
@@ -571,7 +572,7 @@ var _default =
 
 /***/ 38:
 /*!****************************************************************************************************!*\
-  !*** F:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=style&index=0&lang=scss& ***!
+  !*** G:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=style&index=0&lang=scss& ***!
   \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -587,7 +588,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ 39:
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!F:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=style&index=0&lang=scss& ***!
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!G:/HBuilderProjects/my-little-mall/pages/search/search.vue?vue&type=style&index=0&lang=scss& ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {

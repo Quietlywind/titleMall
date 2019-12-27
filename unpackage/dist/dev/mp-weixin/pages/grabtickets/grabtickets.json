@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "我的小商城",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-number-box": "/components/uni-number-box/uni-number-box"
+  }
 }

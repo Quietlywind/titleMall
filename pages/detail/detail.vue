@@ -121,7 +121,7 @@
 				</view>
 				<view class="qf-recommend-list">
 					<block v-for="(item, index) in productList" :key="index">
-						<view class="qf-recommend-item" hover-class="hover" :hover-start-time="150" @tap="gotoDetail">
+						<view class="qf-recommend-item" hover-class="hover" :hover-start-time="150" @tap="gotoDetail('/pages/detail/detail?id='+getRndInteger(1,3),1)">
 							<image :src="'../../static/images/product/'+item.img+'.jpg'" class="qf-recommend-img" mode="widthFix"></image>
 							<view class="qf-recommend-content">
 								<view class="qf-recommend-title text-ellipsis-more">{{item.name}}</view>
@@ -146,16 +146,16 @@
 		<!-- 底部操作区域 -->
 		<view class="qf-bottom-operation">
 			<view class="cu-bar bg-white tabbar border shop">
-				<view class="action text-red" @tap="gotoPage('/pages/index/index')">
+				<view class="action text-orange" @tap="gotoPage('/pages/index/index')">
 					<view class="cuIcon-homefill"></view>首页
 				</view>
-				<view class="action text-orange">
+				<button class="action text-orange" @tap="togglePopup('bottom', 'share')">
 					<view class="cuIcon-share"></view>分享
-				</view>
+				</button>
 				<view class="action text-orange" @tap="gotoPage('/pages/user/user')">
 					<view class="cuIcon-my"></view>我的
 				</view>
-				<view class="bg-red submit qf-operation-btn">
+				<view class="submit qf-operation-btn" :class="[type != 1 ? 'light bg-grey' : 'bg-red']" @tap="gotoDetail('/pages/grabtickets/grabtickets?id='+getRndInteger(1,3),2)">
 					<block v-if="type == 1">
 						<text>￥{{proDetail.price}}.00</text>
 						<text>立即抢券</text>
@@ -175,19 +175,25 @@
 		<!-- 底部操作区域 -->
 		
 		<!-- 底部share分享 -->
-		<uni-popup :show="showShare" :type="'bottom'" @change="change">
-			<!-- <view class="uni-share">
-				<text class="uni-share-title">分享到</text>
+		<uni-popup :show="showshare" :type="'bottom'" @change="change" class="uni-share-box">
+			<view class="uni-share">
+				<text class="uni-share-title">分享给朋友</text>
 				<view class="uni-share-content">
-					<view v-for="(item, index) in bottomData" :key="index" class="uni-share-content-box">
+					<button class="uni-share-content-box uni-share-content-btn" open-type="share">
 						<view class="uni-share-content-image">
-							<image :src="item.icon" class="content-image" mode="widthFix" />
+							<image src="https://img-cdn-qiniu.dcloud.net.cn/uni-ui/grid-2.png" class="content-image" mode="widthFix" />
 						</view>
-						<text class="uni-share-content-text">{{ item.text }}</text>
+						<text class="uni-share-content-text">发给朋友</text>
+					</button>
+					<view class="uni-share-content-box" @tap="gotoDetail('/pages/canvas/canvas?id='+getRndInteger(1,3),1)">
+						<view class="uni-share-content-image">
+							<image src="https://img-cdn-qiniu.dcloud.net.cn/uni-ui/grid-5.png" class="content-image" mode="widthFix" />
+						</view>
+						<text class="uni-share-content-text">生成图片</text>
 					</view>
 				</view>
 				<text class="uni-share-btn" @click="cancel('share')">取消分享</text>
-			</view> -->
+			</view>
 		</uni-popup>
 		<!-- 底部share分享 -->
 	</view>
@@ -300,12 +306,43 @@
 						browseNum: that.getRndInteger(500,5000)
 					}
 				],
-				showShare: false,
-				
+				showshare: false,
+				bottomData: [
+					{
+						text: '微信',
+						icon: 'https://img-cdn-qiniu.dcloud.net.cn/uni-ui/grid-2.png',
+						name: 'wx'
+					},
+					{
+						text: '支付宝',
+						icon: 'https://img-cdn-qiniu.dcloud.net.cn/uni-ui/grid-8.png',
+						name: 'wx'
+					},
+					{
+						text: 'QQ',
+						icon: 'https://img-cdn-qiniu.dcloud.net.cn/uni-ui/gird-3.png',
+						name: 'qq'
+					},
+					{
+						text: '新浪',
+						icon: 'https://img-cdn-qiniu.dcloud.net.cn/uni-ui/grid-1.png',
+						name: 'sina'
+					},
+					{
+						text: '百度',
+						icon: 'https://img-cdn-qiniu.dcloud.net.cn/uni-ui/grid-7.png',
+						name: 'copy'
+					},
+					{
+						text: '其他',
+						icon: 'https://img-cdn-qiniu.dcloud.net.cn/uni-ui/grid-5.png',
+						name: 'more'
+					}
+				]
 			}
 		},
 		onLoad(option) {
-			this.type = option.id;
+			// this.type = option.id;
 			let obj = {};
 			// #ifdef MP-WEIXIN
 			obj = wx.getMenuButtonBoundingClientRect();
@@ -392,9 +429,11 @@
 				})
 			},
 			/* 为您推荐中商品详情跳转 */
-			gotoDetail() {
+			gotoDetail(url,val) {
+				console.log(this.type,val)
+				if (this.type != 1 && val == 2) return
 				uni.navigateTo({
-					url: '/pages/detail/detail'
+					url
 				})
 			},
 			/* 底部操作栏跳转 */
@@ -407,9 +446,15 @@
 			change(e) {
 				console.log('是否打开:' + e.show)
 				if (!e.show) {
-					this.showShare = false
+					this.showshare = false
 				}
-			}
+			},
+			togglePopup(type, open) {
+				this['show' + open] = true
+			},
+			cancel(type) {
+				this['show' + type] = false
+			},
 		},
 		/* 小程序中右上角分享 */
 		onShareAppMessage(res) {
@@ -420,7 +465,7 @@
 			  title: '自定义分享标题',
 			  path: '/pages/detail/detail?id=123'
 			}
-		}
+		},
 	}
 </script>
 
@@ -574,55 +619,54 @@
 	}
 	/* 为您推荐 */
 	.qf-give-recommend {
-		
-	}
-	.qf-recommend-list {
-		display: flex;
-		justify-content: space-between;
-		flex-direction: row;
-		flex-wrap: wrap;
-	} 
-	.qf-recommend-item {
-		width: 49%;
-		margin-bottom: 15rpx;
-		background: #fff;
-		border-radius: 12rpx;
-		overflow: hidden;
-		transition: all 0.15s ease-in-out;
-	}
-	.qf-recommend-img {
-		width: 100%;
-		display: block;
-	}
-	.qf-recommend-content {
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
-		padding: 20rpx;
-	}
-	.qf-recomment-title {
-		color: #2e2e2e;
-		font-size: $font-base - 2;
-		word-break: break-all;
-	}
-	.qf-recommend-price {
-		padding-top: 10rpx;
-	}
-	.qf-sale-price {
-		font-size: 34rpx;
-		font-weight: 500;
-		color: #e41f19;
-	}
-	.qf-factory-price {
-		font-size: 24rpx;
-		color: #a0a0a0;
-		text-decoration: line-through;
-		padding-left: 12rpx;
-	}
-	.qf-sold-num {
-		padding-top: 10rpx;
-		font-size: 26rpx;
-		color: #656565;
+		.qf-recommend-list {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			flex-wrap: wrap;
+		} 
+		.qf-recommend-item {
+			width: 49%;
+			margin-bottom: 15rpx;
+			background: #fff;
+			border-radius: 12rpx;
+			overflow: hidden;
+			transition: all 0.15s ease-in-out;
+		}
+		.qf-recommend-img {
+			width: 100%;
+			display: block;
+		}
+		.qf-recommend-content {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+			padding: 20rpx;
+		}
+		.qf-recomment-title {
+			color: #2e2e2e;
+			font-size: $font-base - 2;
+			word-break: break-all;
+		}
+		.qf-recommend-price {
+			padding-top: 10rpx;
+		}
+		.qf-sale-price {
+			font-size: 34rpx;
+			font-weight: 500;
+			color: #e41f19;
+		}
+		.qf-factory-price {
+			font-size: 24rpx;
+			color: #a0a0a0;
+			text-decoration: line-through;
+			padding-left: 12rpx;
+		}
+		.qf-sold-num {
+			padding-top: 10rpx;
+			font-size: 26rpx;
+			color: #656565;
+		}
 	}
 	/* 底部操作栏 */
 	.qf-bottom-operation {
@@ -634,6 +678,99 @@
 	}
 	.qf-operation-btn {
 		flex-direction: column;
+	}
+	/* 底部share分享弹窗 */
+	.uni-share-box {
+		.uni-popup {
+			z-index: 10;
+		}
+	}
+	.uni-share {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		flex-direction: column;
+		/* #endif */
+		background-color: #fff;
+	}
+	
+	.uni-share-title {
+		line-height: 60rpx;
+		font-size: 24rpx;
+		padding: 15rpx 0;
+		text-align: center;
+	}
+	
+	.uni-share-content {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 10px 15px;
+	}
+	
+	.uni-share-content-box {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: column;
+		align-items: center;
+		// width: 200rpx;
+		flex: 1;
+		line-height: 1;
+	}
+	.uni-share-content-btn {
+		position: relative;
+		text-align: center;
+		padding: 0;
+		display: block;
+		height: auto;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 100%;
+		background: #FFFFFF;
+		&::after {
+			border: 0;
+		}
+	}
+	
+	.uni-share-content-image {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 60rpx;
+		height: 60rpx;
+		overflow: hidden;
+		border-radius: 10rpx;
+	}
+	
+	.content-image {
+		width: 60rpx;
+		height: 60rpx;
+	}
+	
+	.uni-share-content-text {
+		font-size: 26rpx;
+		color: #333;
+		padding-top: 5px;
+		padding-bottom: 10px;
+	}
+	
+	.uni-share-btn {
+		height: 90rpx;
+		line-height: 90rpx;
+		font-size: 14px;
+		border-top-color: #f5f5f5;
+		border-top-width: 1px;
+		border-top-style: solid;
+		text-align: center;
+		color: #666;
 	}
 	
 	

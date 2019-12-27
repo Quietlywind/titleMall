@@ -302,7 +302,8 @@
 			// #endif
 			uni.getSystemInfo({
 				success: (res) => {
-					this.dropScreenH = this.CustomBar + 50 + uni.upx2px(168)
+					console.log(uni.upx2px(168))
+					this.dropScreenH = this.CustomBar + 50 + uni.upx2px(88) + uni.upx2px(80)
 				}
 			})
 		},
