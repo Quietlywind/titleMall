@@ -734,7 +734,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7098,7 +7098,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7119,14 +7119,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7202,7 +7202,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9262,7 +9262,7 @@ module.exports = QRCode;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的小商城", "usingComponents": { "list-cell": "/components/mix-list-cell", "qf-modal": "/components/modal/modal" } }, "pages/search/search": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/detail/detail": { "navigationBarTitleText": "我的小商城", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/agreement/agreement": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/grabtickets/grabtickets": { "navigationBarTitleText": "我的小商城", "usingComponents": { "uni-number-box": "/components/uni-number-box/uni-number-box" } }, "pages/coupon_success/coupon_success": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/writeoff/writeoff": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/coupon/coupon": { "navigationBarTitleText": "券管理", "usingComponents": { "empty": "/components/empty", "uni-load-more": "/components/uni-load-more/uni-load-more" } }, "pages/check/check": { "usingComponents": {} }, "pages/canvas/canvas": { "usingComponents": {} } }, "globalStyle": { "navigationStyle": "custom", "navigationBarTextStyle": "white", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的小商城", "usingComponents": { "list-cell": "/components/mix-list-cell", "qf-modal": "/components/modal/modal" } }, "pages/search/search": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/detail/detail": { "navigationBarTitleText": "我的小商城", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/agreement/agreement": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/grabtickets/grabtickets": { "navigationBarTitleText": "我的小商城", "usingComponents": { "uni-number-box": "/components/uni-number-box/uni-number-box" } }, "pages/coupon_success/coupon_success": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/writeoff/writeoff": { "navigationBarTitleText": "我的小商城", "usingComponents": {} }, "pages/coupon/coupon": { "navigationBarTitleText": "券管理", "usingComponents": { "empty": "/components/empty", "uni-load-more": "/components/uni-load-more/uni-load-more" } }, "pages/check/check": { "usingComponents": {} }, "pages/canvas/canvas": { "usingComponents": {} }, "pages/web-view/web-view": { "usingComponents": {} } }, "globalStyle": { "navigationStyle": "custom", "navigationBarTextStyle": "white", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 

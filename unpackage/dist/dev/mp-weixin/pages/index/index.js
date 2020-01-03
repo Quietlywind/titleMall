@@ -154,7 +154,6 @@ var _default =
 
   },
   onLoad: function onLoad() {
-
   },
   methods: {} };exports.default = _default;
 

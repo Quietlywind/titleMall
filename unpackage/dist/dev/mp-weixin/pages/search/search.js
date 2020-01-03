@@ -435,7 +435,6 @@ var _default =
 
     uni.getSystemInfo({
       success: function success(res) {
-        console.log(uni.upx2px(168));
         _this.dropScreenH = _this.CustomBar + 50 + uni.upx2px(88) + uni.upx2px(80);
       } });
 
@@ -460,7 +459,10 @@ var _default =
     },
     /* 搜索框事件 */
     searchIcon: function searchIcon(e) {
-      var key = e.detail.value;
+      var value = e.detail.value;
+      uni.navigateTo({
+        url: "/pages/web-view/web-view?url=https://baike.baidu.com/item/".concat(value) });
+
     },
 
     /* 判断数据显示个数 */

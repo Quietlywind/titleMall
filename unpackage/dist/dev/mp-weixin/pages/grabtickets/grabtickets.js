@@ -181,9 +181,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   data: function data() {
     return {
+      type: 2,
       image: 'https://img13.360buyimg.com/n8/jfs/t1/30343/20/1029/481370/5c449438Ecb46a15b/2b2adccb6dc742fd.jpg',
       title: '【京华城RMall店】就是这么任性！免费领养！！！邀请您参加免费送猫！就是这么任性！免费领养！！！！l',
       stockA: 1000,
@@ -194,7 +211,8 @@ __webpack_require__.r(__webpack_exports__);
       mealValB: 1 };
 
   },
-  onLoad: function onLoad() {
+  onLoad: function onLoad(e) {
+    this.type = e.type;
   },
   onShow: function onShow() {
 

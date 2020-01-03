@@ -10,7 +10,8 @@
     "pages/writeoff/writeoff",
     "pages/coupon/coupon",
     "pages/check/check",
-    "pages/canvas/canvas"
+    "pages/canvas/canvas",
+    "pages/web-view/web-view"
   ],
   "subPackages": [],
   "window": {
@@ -53,6 +54,5 @@
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  },
-  "sitemapLocation": "sitemap60.json"
+  }
 }

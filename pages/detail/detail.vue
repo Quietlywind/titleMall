@@ -155,7 +155,7 @@
 				<view class="action text-orange" @tap="gotoPage('/pages/user/user')">
 					<view class="cuIcon-my"></view>我的
 				</view>
-				<view class="submit qf-operation-btn" :class="[type != 1 ? 'light bg-grey' : 'bg-red']" @tap="gotoDetail('/pages/grabtickets/grabtickets?id='+getRndInteger(1,3),2)">
+				<view class="submit qf-operation-btn" :class="[type != 1 ? 'light bg-grey' : 'bg-red']" @tap="gotoDetail('/pages/grabtickets/grabtickets?id='+getRndInteger(1,3)+'&type='+getRndInteger(1,2),2)">
 					<block v-if="type == 1">
 						<text>￥{{proDetail.price}}.00</text>
 						<text>立即抢券</text>
@@ -430,7 +430,6 @@
 			},
 			/* 为您推荐中商品详情跳转 */
 			gotoDetail(url,val) {
-				console.log(this.type,val)
 				if (this.type != 1 && val == 2) return
 				uni.navigateTo({
 					url

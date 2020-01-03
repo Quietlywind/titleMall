@@ -92,14 +92,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   var m0 = _vm.getRndInteger(1, 3)
   var m1 = _vm.getRndInteger(1, 3)
-  var m2 = _vm.getRndInteger(1, 3)
+  var m2 = _vm.getRndInteger(1, 2)
+  var m3 = _vm.getRndInteger(1, 3)
   _vm.$mp.data = Object.assign(
     {},
     {
       $root: {
         m0: m0,
         m1: m1,
-        m2: m2
+        m2: m2,
+        m3: m3
       }
     }
   )
@@ -567,7 +569,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     /* 为您推荐中商品详情跳转 */
     gotoDetail: function gotoDetail(url, val) {
-      console.log(this.type, val);
       if (this.type != 1 && val == 2) return;
       uni.navigateTo({
         url: url });

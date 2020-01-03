@@ -11,28 +11,44 @@
 					<text class="title text-ellipsis-more">{{title}}</text>
 				</view>
 			</view>
-			<view class="qf-choice-coupon">选择套餐</view>
+			<view class="qf-choice-coupon" v-if="type == 2">选择套餐</view>
 			<view class="qf-meal-operation">
-				<view class="qf-meal-item margin-bottom-xs">
-					<view class="qf-number-left">
-						<text>套餐A（库存{{stockA}}）</text>
-					</view>
-					<view class="qf-number-center" style="flex: 1;padding-left: 8%;">
-						￥{{taPrice}}.00
-					</view>
-					<view class="qf-number-right">
-						<uni-number-box :value="mealValA" :min="1" :max="stockA" @change="mealChange"/>
+				<view class="" v-if="type ==1">
+					<view class="qf-meal-item margin-bottom-xs">
+						<view class="qf-number-left">
+							<text>单价：￥{{taPrice}}.00（库存{{stockA}}）</text>
+						</view>
+						<!-- <view class="qf-number-center" style="flex: 1;">
+							购买数量：
+						</view> -->
+						<view class="qf-number-right" style="display: flex; align-items: center;">
+							<text>购买数量：</text>
+							<uni-number-box :value="mealValA" :min="1" :max="stockA" @change="mealChange"/>
+						</view>
 					</view>
 				</view>
-				<view class="qf-meal-item margin-bottom-xs">
-					<view class="qf-number-left">
-						<text>套餐B（库存{{stockB}}）</text>
+				<view class="" v-else-if="type == 2">
+					<view class="qf-meal-item margin-bottom-xs">
+						<view class="qf-number-left">
+							<text>套餐A（库存{{stockA}}）</text>
+						</view>
+						<view class="qf-number-center" style="flex: 1;padding-left: 8%;">
+							￥{{taPrice}}.00
+						</view>
+						<view class="qf-number-right">
+							<uni-number-box :value="mealValA" :min="1" :max="stockA" @change="mealChange"/>
+						</view>
 					</view>
-					<view class="qf-number-center" style="flex: 1;padding-left: 8%;">
-						￥{{tbPrice}}.00
-					</view>
-					<view class="qf-number-right">
-						<uni-number-box :value="mealValB" :min="1" :max="stockA" @change="mealChange"/>
+					<view class="qf-meal-item margin-bottom-xs">
+						<view class="qf-number-left">
+							<text>套餐B（库存{{stockB}}）</text>
+						</view>
+						<view class="qf-number-center" style="flex: 1;padding-left: 8%;">
+							￥{{tbPrice}}.00
+						</view>
+						<view class="qf-number-right">
+							<uni-number-box :value="mealValB" :min="1" :max="stockA" @change="mealChange"/>
+						</view>
 					</view>
 				</view>
 				<view class="qf-solid b-b margin-bottom margin-top"></view>
@@ -60,6 +76,7 @@
 	export default {
 		data() {
 			return {
+				type: 2,
 				image: 'https://img13.360buyimg.com/n8/jfs/t1/30343/20/1029/481370/5c449438Ecb46a15b/2b2adccb6dc742fd.jpg',
 				title: '【京华城RMall店】就是这么任性！免费领养！！！邀请您参加免费送猫！就是这么任性！免费领养！！！！l',
 				stockA: 1000,
@@ -70,7 +87,8 @@
 				mealValB: 1,
 			}
 		},
-		onLoad() {
+		onLoad(e) {	
+			this.type = e.type;
 		},
 		onShow() {
 

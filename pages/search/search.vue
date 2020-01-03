@@ -302,7 +302,6 @@
 			// #endif
 			uni.getSystemInfo({
 				success: (res) => {
-					console.log(uni.upx2px(168))
 					this.dropScreenH = this.CustomBar + 50 + uni.upx2px(88) + uni.upx2px(80)
 				}
 			})
@@ -327,7 +326,10 @@
 			},
 			/* 搜索框事件 */
 			searchIcon(e) {
-				let key = e.detail.value;
+				let value = e.detail.value;
+				uni.navigateTo({
+					url: `/pages/web-view/web-view?url=https://baike.baidu.com/item/${value}`
+				})
 			},
 			
 			/* 判断数据显示个数 */
