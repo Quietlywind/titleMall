@@ -4792,7 +4792,7 @@ scroll-view.cu-steps .cu-item {
   font-family: "qficon";
   font-weight: normal;
   font-style: normal;
-  src: url('https://at.alicdn.com/t/font_1512175_n3k41pst848.ttf') format('truetype');
+  src: url('https://at.alicdn.com/t/font_1512175_2qoduktiiyr.ttf') format('truetype');
 }
 .qficon {
   font-family: "qficon" !important;
@@ -4804,17 +4804,29 @@ scroll-view.cu-steps .cu-item {
 .qf-weixin1:before {
   content: "\E6B3";
 }
-.qf-fangxiang-xiangxia:before {
-  content: "\E614";
+.qf-paixingbang:before {
+  content: "\E6C5";
 }
-.qf-fangxiang-xiangshang:before {
-  content: "\E615";
+.qf-rili:before {
+  content: "\E685";
 }
-.qf-fangxiang-xiangzuo:before {
-  content: "\E616";
+.qf-jian:before {
+  content: "\E608";
 }
-.qf-fangxiang-xiangyou:before {
-  content: "\E617";
+.qf-jia:before {
+  content: "\E60A";
+}
+.qf-icon-:before {
+  content: "\E642";
+}
+.qf-zhibohuifang:before {
+  content: "\E6E3";
+}
+.qf-gedan:before {
+  content: "\E636";
+}
+.qf-yinle:before {
+  content: "\E609";
 }
 .qf-search:before {
   content: "\E665";
@@ -4836,9 +4848,6 @@ scroll-view.cu-steps .cu-item {
 }
 .qf-arrow_down:before {
   content: "\E6B6";
-}
-.qf-home-index:before {
-  content: "\E679";
 }
 /*每个页面公共css */
 view,

@@ -13,7 +13,18 @@
     "pages/canvas/canvas",
     "pages/web-view/web-view"
   ],
-  "subPackages": [],
+  "subPackages": [
+    {
+      "root": "pages/cloud-music",
+      "pages": [
+        "every-recommend/every-recommend",
+        "playlist/playlist",
+        "rank-list/rank-list",
+        "radio/radio",
+        "live/live"
+      ]
+    }
+  ],
   "window": {
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white",
