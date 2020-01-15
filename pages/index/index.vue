@@ -26,7 +26,7 @@
 			<view class="cate-section b-b">
 				<view class="cate-item" @tap="goDetailPage('every-recommend')">
 					<view class="cate-item-radius text-center qficon qf-rili">
-						<text class="now-today">{{nowDay}}</text>
+						<text class="now-today">{{new Date().getDate()}}</text>
 					</view>
 					<text class="cate-item-text">每日推荐</text>
 				</view>
@@ -105,9 +105,7 @@
 						<view class="padding-top-xs">
 							<view class="text-cut text-xs" style="line-height: 1.5;">{{newsongList[i].name}}</view>
 							<view class="text-cut text-gray atrists-name">
-								<text v-for="(j,idx) in newsongList[i].song.artists">
-									{{j.name}}
-								</text>
+								{{newsongList[i].authors}}
 							</view>
 						</view>
 					</view>
@@ -118,6 +116,7 @@
 </template>
 
 <script>
+	import { baseUrl } from "../../common/api";
 	export default {
 		data() {
 			return {
@@ -129,14 +128,12 @@
 				dishFlag: true,
 				albumsList:[],
 				newsongList: [],
-				nowDay: "",
 				navigateFlag: false,
 			}
 		},
 		onLoad() {
-			this.nowDay = new Date().getDate()
 			uni.request({
-				url:"http://192.168.1.7:3000/banner",
+				url: baseUrl+"/banner",
 				data:{
 					type: 1
 				},
@@ -197,7 +194,7 @@
 			/* 推荐歌单请求 */
 			recommendSel() {
 				uni.request({
-					url:"http://192.168.1.7:3000/personalized",
+					url: baseUrl+"/personalized",
 					data:{
 						limit: 6
 					},
@@ -224,7 +221,7 @@
 			/* 获取最新专辑 */
 			albumNew() {
 				uni.request({
-					url:"http://192.168.1.7:3000/album/newest",
+					url: baseUrl+"/album/newest",
 					data:{},
 					success: (res) => {
 						let { data } = res;
@@ -245,11 +242,18 @@
 			/* 获取新歌 */
 			songNew() {
 				uni.request({
-					url:"http://192.168.1.7:3000/personalized/newsong",
+					url: baseUrl+"/personalized/newsong",
 					data:{},
 					success: (res) => {
 						let { data } = res;
 						if (data.code == 200) {
+							data.result.map((i, index) => {
+								i.authors = "";
+								i.song.artists.forEach((j ,idx) => {
+									i.authors += j.name+ '/';
+								})
+								i.authors = i.authors.substr(0,i.authors.length - 1)
+							})
 							this.newsongList = data.result
 							// console.log(data.result)
 						}

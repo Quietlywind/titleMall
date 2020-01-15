@@ -3,25 +3,25 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "我的小商城"
+				"navigationBarTitleText": "首页"
 			}
 		},
 		{
 			"path": "pages/user/user",
 			"style": {
-				"navigationBarTitleText": "我的小商城"
+				"navigationBarTitleText": "我的"
 			}
 		},
 		{
 			"path": "pages/search/search",
 			"style": {
-				"navigationBarTitleText": "我的小商城"
+				"navigationBarTitleText": "搜索"
 			}
 		},
 		{
 			"path": "pages/detail/detail",
 			"style": {
-				"navigationBarTitleText": "我的小商城"
+				"navigationBarTitleText": "商品详情"
 			}
 		},
 		{
@@ -39,7 +39,7 @@
 		{
 			"path": "pages/coupon_success/coupon_success",
 			"style": {
-				"navigationBarTitleText": "我的小商城"
+				"navigationBarTitleText": "抢券成功"
 			}
 		},
 		{
@@ -56,7 +56,9 @@
 		},
 		{
 			"path":"pages/check/check",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "查看券"
+			}
 		},
 		{
 			"path":"pages/canvas/canvas",
@@ -131,7 +133,7 @@
 		"current": 0, //当前激活的模式（list 的索引项）
 		"list": [{
 			"name": "test", //模式名称
-			"path": "pages/cloud-music/rank-list/rank-list" //启动页面，必选
+			"path": "pages/cloud-music/playlist/playlist" //启动页面，必选
 		}]
 	},
 	"globalStyle": {
